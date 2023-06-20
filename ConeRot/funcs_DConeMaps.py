@@ -676,8 +676,8 @@ def exec_conicpolar_expansions(M):
                         np.cos(phis_rad) * np.average(np.cos(phis_rad)))
                 vsysts[irrs] = np.average(v0_vec - KepAmp * np.cos(phis_rad))
 
-        vsyst = np.asscalar(np.median(vsysts[ia_min:ia_max]))
-        sigma_vsyst = np.asscalar(np.std(vsysts[ia_min:ia_max]))
+        vsyst = np.median(vsysts[ia_min:ia_max])
+        sigma_vsyst = np.std(vsysts[ia_min:ia_max])
         print("vsyst calculated = ", vsyst, "+-", sigma_vsyst)
         M.vsyst = vsyst
         M.sigma_vsyst = sigma_vsyst
