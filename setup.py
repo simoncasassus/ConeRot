@@ -36,12 +36,13 @@ if __name__ == "__main__":
         packages=[PACKAGENAME, PACKAGENAME+'.RotOrient'],
         install_requires=[ # Modify for current packages
             'pytest',
-            'numba == 0.56.4',
+            #'numba == 0.56.4',
+            'numba',
             'scipy',
-            'astropy == 4.3.1',
+            'astropy',
             'numpy',
-            'iminuit == 1.3.10',
-            'emcee == 3.1.1',
+            'iminuit',
+            'emcee',
             ],
         python_requires='>=3.6',
     )

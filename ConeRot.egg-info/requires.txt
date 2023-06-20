@@ -1,0 +1,7 @@
+pytest
+numba
+scipy
+astropy
+numpy
+iminuit
+emcee
