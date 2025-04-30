@@ -423,6 +423,9 @@ def exec_emcee(M, result_ml, RunMCMC, OptimM):
 #Regions
 def proc_1region(iregion):
     names = list(map((lambda x: x[0]), M.domain))
+    if ('x_center' in names) or ('y_center' in names):
+        M.VariableCenter = True
+        
     bnds = list(map((lambda x: x[1]), M.domain))
     nvar = len(names)
     sample_theta = list(range(nvar))

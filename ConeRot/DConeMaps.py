@@ -32,6 +32,7 @@ class Model():
             DEC=False,
             x_center=0.,
             y_center=0.,
+            VariableCenter=False,
             # ErrorMap=False,
             DoErrorMap=False,
             XCheckInv=False,

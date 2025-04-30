@@ -503,9 +503,14 @@ def exec_conicpolar_expansions(M):
 
     DoFarSideOnly = M.DoFarSideOnly
 
+    if M.VariableCenter:
+        M.grid_4center()
+        
     hdu = M.Hducentered
     hduw = M.Hduwcentered
 
+
+    
     #typicalerror=ExpectedError
 
     #cosi=np.cos(inc*np.pi/ 180.)
