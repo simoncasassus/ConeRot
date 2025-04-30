@@ -44,7 +44,6 @@ def lnlike(theta):
 
     for iparam in range(nvar):
         setattr(M, names[iparam], theta[iparam])
-        print("M.x_center",M.x_center)
 
     #aPA=theta[0]
     #ainc=theta[1]
