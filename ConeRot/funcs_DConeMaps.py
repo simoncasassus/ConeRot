@@ -504,6 +504,7 @@ def exec_conicpolar_expansions(M):
     DoFarSideOnly = M.DoFarSideOnly
 
     if M.VariableCenter:
+        print("executing grid_4center")
         M.grid_4center()
         
     hdu = M.Hducentered
