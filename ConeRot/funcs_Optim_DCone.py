@@ -168,6 +168,10 @@ def exec_ConjGrad_1region(M, OptimM):
     bnds = list(map((lambda x: x[1]), M.domain))
     nvar = len(list(names))
     sample_theta = list(range(nvar))
+    if ('x_center' in names) or ('y_center' in names):
+        M.VariableCenter = True
+    else:
+        M.VariableCenter = False
 
     if M.InheritGlobalInit:
         M.PA = M.PA0
@@ -227,7 +231,11 @@ def exec_emcee(M, result_ml, RunMCMC, OptimM):
     workdir = M.workdir
     names = list(map((lambda x: x[0]), M.domain))
     bnds = list(map((lambda x: x[1]), M.domain))
-
+    if ('x_center' in names) or ('y_center' in names):
+        M.VariableCenter = True
+    else:
+        M.VariableCenter = False
+        
     nvar = len(names)
     print("mcmc with nvar=", nvar)
 
@@ -423,8 +431,6 @@ def exec_emcee(M, result_ml, RunMCMC, OptimM):
 #Regions
 def proc_1region(iregion):
     names = list(map((lambda x: x[0]), M.domain))
-    if ('x_center' in names) or ('y_center' in names):
-        M.VariableCenter = True
         
     bnds = list(map((lambda x: x[1]), M.domain))
     nvar = len(names)

@@ -419,7 +419,7 @@ def exec_grid_4center(M):
         #RA=RA+(np.sin(x_center*np.pi/180.)*y_center/3600.)/np.cos(DEC*np.pi/180.)
         RA = RA + ((x_center / 3600.) / np.cos(DEC * np.pi / 180.))
         #DEC=DEC+np.cos(x_center*np.pi/180.)*y_center/3600.
-        DEC = DEC + ((y_center / 3600.) * np.pi / 180.)
+        DEC = DEC + (y_center / 3600.) 
         if (M.Verbose):
             print("RA =", RA)
             print("DEC =", DEC)
